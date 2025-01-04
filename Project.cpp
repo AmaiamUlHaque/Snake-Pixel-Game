@@ -6,13 +6,12 @@
 
 using namespace std;
 
-
-const int speeds[5] = {200000, 175000, 150000, 125000, 100000}; // in seconds: 0.2, 0.175, 0.15, 0.125, 0.1
-
+#define DELAY_CONST 100000
 
 
 Player *myPlayer; // global pointer meant to instantiate a player object 
 GameMechs *myGM;
+
 
 
 void Initialize(void);
@@ -64,25 +63,16 @@ void RunLogic(void)
 {
     myPlayer->updatePlayerDir();
     myPlayer->movePlayer();
-
     
 }
 
 void DrawScreen(void)
+
 {
     MacUILib_clearScreen();  
-    
-    //GAME STATS
-    MacUILib_printf("Press 'Q' to decrease speed and 'E' to increase speed.\nCurrent Speed Level: %d\n\n", (myGM->getSpeed()+1));
-    MacUILib_printf("Press 'esc' to exit.\n\n\n");
-    //POSITION STATS
     objPos playerPos = myPlayer -> getPlayerPos();
-    MacUILib_printf("player [x, y, symbol] = [%d, %d, %c]\n" , playerPos.pos->x, playerPos.pos->y, playerPos.symbol);
+    printf  ("player [x, y, symbol] = [%d, %d, %c]\n" , playerPos.pos->x, playerPos.pos->y, playerPos.symbol);
     
-
-
-
-
     for (int i = 0; i < myGM->getBoardSizeY(); i++)//columns 
     {
  
@@ -91,16 +81,16 @@ void DrawScreen(void)
             if  (j == 0 || j == myGM->getBoardSizeX()-1 || i == 0 || i == myGM->getBoardSizeY()-1)
             {
                 MacUILib_printf("#");
+                
             } 
-
             else if (i == playerPos.pos->y && j == playerPos.pos->x)
             {
                 MacUILib_printf("%c", playerPos.symbol);
             }
-
             else
             {
                 MacUILib_printf(" ");
+
             }  
 
         }
@@ -112,7 +102,7 @@ void DrawScreen(void)
 
 void LoopDelay(void)
 {
-    MacUILib_Delay(speeds[myGM->getSpeed()]); // 0.1s delay
+    MacUILib_Delay(DELAY_CONST); // 0.1s delay
 }
 
 
