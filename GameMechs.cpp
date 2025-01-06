@@ -10,6 +10,8 @@ GameMechs::GameMechs()
 
     boardSizeX = 30;
     boardSizeY = 15;
+
+    speed = 0;
 }
 
 GameMechs::GameMechs(int boardX, int boardY)
@@ -21,6 +23,8 @@ GameMechs::GameMechs(int boardX, int boardY)
 
     boardSizeX = boardX;
     boardSizeY = boardY;
+
+    speed = 0;
     
 }
 
@@ -44,7 +48,7 @@ bool GameMechs::getLoseFlagStatus() const
 
 char GameMechs::getInput() 
 {
-     if(MacUILib_hasChar())
+     if(MacUILib_hasChar()!=0)
      {
         input = MacUILib_getChar();
      }
@@ -97,3 +101,22 @@ void GameMechs::clearInput()
 }
 
 // More methods should be added here
+
+int GameMechs::getSpeed()
+{
+    return speed;
+}
+
+void GameMechs::setSpeed(char symbol) 
+{
+    if (symbol == '+') {
+        speed++;
+        if (speed >= 4) {speed = 4;}
+    }
+
+    else {
+        speed--;
+        if (speed <= 0) {speed = 0;}
+    }
+
+}
