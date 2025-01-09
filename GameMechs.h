@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 class GameMechs
 {
     private:
@@ -23,10 +22,11 @@ class GameMechs
 
         int speed;
 
+
+
+        
+
         objPos food;
-
-
-
 
     public:
         GameMechs();
@@ -49,8 +49,11 @@ class GameMechs
         void incrementScore();
         
         // More methods should be added here
-        int getSpeed() const;
-        void setSpeed(char symbol);
+        int getSpeed();
+        int setSpeed();
+
+        void generateFood(objPos blockoff);
+        objPos getFoodPos()const;
 
 
 
