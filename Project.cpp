@@ -79,6 +79,8 @@ void DrawScreen(void)
     MacUILib_clearScreen();  
     
     //GAME STATS
+    MacUILib_printf("Press 'W A S D' to turn 'up, left, down, right' respectively.\n");
+    MacUILib_printf("(90* turns only, no 180* reversals.\n\n");
     MacUILib_printf("Press 'Q' to decrease speed and 'E' to increase speed.\nCurrent Speed Level: %d\n\n", (myGM->getSpeed()+1));
     MacUILib_printf("Press 'esc' to exit.\n\n");
     MacUILib_printf("Score: %d\n\n\n", myGM->getScore());
