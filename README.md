@@ -6,9 +6,19 @@ A complete C++ implementation of the classic Snake game featuring modular object
 
 ## Final Results
 
-### Results:
+### Gameplay:
 
-ADD PICS, GIFS, VIDEOS!!!
+|  |  |  |
+| --- | ------- | ------- |
+| some gameplay | ![some gameplay](./Media/more%20gameplay.gif) | ![struggling gameplay](./Media/me%20struggling%20oopsies.gif) |
+| speed change | ![speed - not moving](./Media/speed%20change%20-%20not%20moving.gif) | ![speed - moving](./Media/speed%20change%20-%20moving.gif) |
+| boundary crossing | ![boundary crossing](./Media/boundary%20crossing.gif) | ![more boundary crossing](./Media/more%20boundary%20crossing.gif) |
+| forced end screen | ![forced end - didnt start yet](./Media/forced%20end%20screen.gif) | ![forced end - moving](./Media/forced%20end%20screen%20while%20playing.gif) |
+| building and running file | ![slower make](./Media/make%20file.gif) | ![normal speed make](./Media/make%20file%20quicker.gif) |
+| food respawning (debugging purposes) | ![food  regen - not moving](./Media/food%20regen%20-%20not%20moving.gif) | ![food regen - moving](./Media/food%20regen%20-%20while%20moving.gif) |
+| game over screen | ![game over](./Media/game%20over.gif) |  |
+| start screen | ![start screen](./Media/Start%20Screen.png) |  |
+
 
 ### Game Mechanics
 - **Movement**: Use `W A S D` keys for directional control (90° turns only, no 180° reversals)
